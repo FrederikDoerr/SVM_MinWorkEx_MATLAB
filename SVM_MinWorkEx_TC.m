@@ -24,8 +24,8 @@ DTR_Class = table2array([DS0(:,2);DS1(:,2);DS2(:,2)]);
 DTT = table2array(DTT_T(:,idx_relieff_SEL));
 DTT_Class = table2array([DS3(:,2);DS4(:,2);DS5(:,2)]);
 
-Var1_label = 'V_{maxFeretSph,F,V\_ROI} [?m]';
-Var2_label = 'SF_{Elps,SA,r3,V\_ROI}';
+Var1_label = 'V_{maxFeretSph,F,V\_ROI}';
+Var2_label = 'SF_{Elps,SA,r3,V\_ROI} [μm]';
 
 % Parameter
 KernelFunction_mdl = 'rbf';
