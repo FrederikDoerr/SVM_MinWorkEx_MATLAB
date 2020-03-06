@@ -15,6 +15,9 @@
 % https://uk.mathworks.com/help/stats/fitcsvm.html
 % https://uk.mathworks.com/help/stats/support-vector-machines-for-binary-classification.html
 
+fprintf('%s - Start Two Class-SVM\n',Opt.ExpShorthand)
+
+
 DTR = table2array(DTR_T(:,idx_relieff_SEL));
 DTR_Class = table2array([DS0(:,2);DS1(:,2);DS2(:,2)]);
 
