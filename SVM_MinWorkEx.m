@@ -106,6 +106,7 @@ DTT = table2array(DTT_T);
 DTT_Class = table2array([DS3(:,2);DS4(:,2);DS5(:,2)]);
 
 % Run ReliefF Feature Selection
+% Including all observations of the minority class ensures maximum robustness against noise, but limits the detection of feature dependencies in the context of nearest neighbor locality to the majority class 
 k_relieff = size(DTR_Class(DTR_Class==2),1);
 [idx_relieff,weights] = relieff(DTR,DTR_Class,k_relieff);
 
@@ -141,7 +142,7 @@ for k = 1:numCatC
     end
     idx_matched = rmmissing(idx_matched);
     if ~isempty(idx_matched)
-        % Acceptance criteria
+        % Acceptance criteria (best ranked in each structure-related categories and rejects the null hypothesis of equal means of ttest2) 
         idx = find((weights(idx_matched) == max(weights(idx_matched)))&(h_ttest2(idx_matched).'));
         if ~isempty(idx)
             idx_CatC(k) = idx_matched(idx);
@@ -157,12 +158,12 @@ for k = 1:length(idx_relieff_SEL)
 end
 
 %% Support Vector Machine - One Class
-
+addpath(Opt.mainFolder_path)
 run SVM_MinWorkEx_OC.m
 
 
 %% Support Vector Machine - Two Class
-
+addpath(Opt.mainFolder_path)
 run SVM_MinWorkEx_TC.m
 
 
