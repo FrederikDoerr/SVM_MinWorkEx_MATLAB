@@ -15,7 +15,7 @@
 % https://uk.mathworks.com/help/stats/fitcsvm.html
 % https://uk.mathworks.com/help/stats/support-vector-machines-for-binary-classification.html
 
-
+fprintf('%s - Start One Class-SVM\n',Opt.ExpShorthand)
 
 % Convert table to data matrix
 DTR = table2array(DTR_T(:,idx_relieff_SEL));
