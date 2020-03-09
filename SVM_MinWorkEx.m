@@ -53,7 +53,7 @@ fprintf('%s - Setup complete\n',Opt.ExpShorthand)
 
 %% Load DataSet
 
-numDS = length(Opt.InputFile_name_list)-2;
+numDS = length(Opt.InputFile_name_list);
 
 DS0 = readtable(fullfile(Opt.InputFolder_path,Opt.InputFile_name_list{1}));
 DS1 = readtable(fullfile(Opt.InputFolder_path,Opt.InputFile_name_list{2}));
