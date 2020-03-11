@@ -62,7 +62,7 @@ DS3 = readtable(fullfile(Opt.InputFolder_path,Opt.InputFile_name_list{4}));
 DS4 = readtable(fullfile(Opt.InputFolder_path,Opt.InputFile_name_list{5}));
 DS5 = readtable(fullfile(Opt.InputFolder_path,Opt.InputFile_name_list{6}));
 numObs = sum([size(DS0,1),size(DS1,1),size(DS2,1),size(DS3,1),size(DS4,1),size(DS5,1)]);
-numFeat = size(DS0,2);
+numFeat = size(DS0,2)-2; %  Two columns related to ID and Class
 
 fprintf('%s - Imported %.0f files with measured data from %.0f observations related to %.0f features\n',Opt.ExpShorthand,numDS,numObs,numFeat)
 
